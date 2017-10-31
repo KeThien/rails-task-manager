@@ -1,2 +1,14 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1><%= @task.title %></h1>
+<p><%= @task.desc %></p>
+<p>
+  <% if @task.completed %>
+    <%= "completed" %>
+    <input type="checkbox" checked>
+  <% else %>
+    <%= "uncompleted" %>
+    <input type="checkbox">
+  <% end %>
+</p>
+<p>
+  <%= link_to 'Back', tasks_path %>
+</p>

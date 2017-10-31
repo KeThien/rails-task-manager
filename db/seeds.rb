@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts "Deleting all tasks"
+Task.destroy_all
+
+puts "Creating 15 tasks"
+15.times do
+  task = Task.create(title: Faker::HarryPotter.location,desc: Faker::HarryPotter.quote, completed: false)
+
+end
